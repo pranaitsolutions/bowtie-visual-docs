@@ -29,3 +29,7 @@ Email **support@pranaits.com** with:
 
 ## Feature requests
 Same address, "Feature request" in the subject.
+
+## Open-source components
+The visual is built with open-source libraries including React, React Flow, dagre and d3.
+Copyright and licence texts: [Third-party notices](third-party-notices).
