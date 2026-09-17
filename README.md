@@ -1,11 +1,3 @@
-# Bowtie Risk Visual — Documentation
+# Bowtie Risk Visual — public docs
 
-Public documentation site for the Bowtie Risk Visual Power BI custom visual.
-
-Published at: https://pranaitsolutions.github.io/bowtie-visual-docs/
-
-Pages:
-- `index.md` — landing page
-- `user-guide.md` — user guide
-- `support.md` — support and FAQ
-- `privacy.md` — privacy policy
+GitHub Pages site. Publish from `main`, root.

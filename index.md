@@ -1,19 +1,11 @@
 # Bowtie Risk Visual for Power BI
 
-Interactive bow-tie risk analysis visualisation for Microsoft Power BI.
+Interactive bow-tie risk analysis for Microsoft Power BI, by Prana IT Solutions Ltd.
 
-**Publisher:** Prana IT Solutions Ltd
+- [User Help](user-guide) — setup, data model, interactions, formatting, drill-through
+- [Support](support) — quick answers and how to reach us
+- [Privacy Policy](privacy)
 
-## Documentation
-
-- [User Guide](user-guide) — Setup, field mapping, interaction, formatting
-- [Support](support) — FAQ, troubleshooting, contact
-- [Privacy Policy](privacy) — Data handling and privacy
-
-## Get the Visual
-
-Available on [Microsoft AppSource](https://appsource.microsoft.com) — search "Bowtie Risk Visual".
-
-## Contact
+Available on Microsoft AppSource — search "Bowtie Risk Visual".
 
 support@pranaits.com
