@@ -98,7 +98,7 @@ The bowtie renders as soon as the required wells are bound.
 ### 3.1 Reading the diagram
 
 - **Blue cards (left)** — causes. Subtitle shows likelihood if bound.
-- **White cards next to them** — prevention barrier groups. Collapsed by default: "N barriers", a row of health dots (green / amber / red), an action pill, and ⊞.
+- **White cards next to them** — prevention barrier groups. Collapsed by default (see *Start expanded*): "N barriers", a row of health dots (green / amber / red), an action pill, and ⊞.
 - **Orange-bordered card (centre)** — the top event. Shows the risk score badge and a pill with total risk-level actions.
 - **Grey cards (right)** — mitigation barrier groups.
 - **Yellow cards (far right)** — consequences. Subtitle shows severity if bound.
@@ -110,7 +110,9 @@ The bowtie renders as soon as the required wells are bound.
 |---|---|
 | Click ⊞ on a barrier group card | Expands that cause's / consequence's barriers into individual cards |
 | Click ⊟ on the cause / consequence card | Collapses them back (⊟ only appears while expanded) |
-| **Expand All** / **Collapse All** toolbar | All groups at once |
+| **Expand All** / **Collapse All** toolbar | All groups at once (Auto layout; hide it with *Show expand/collapse toolbar*) |
+
+Turn on **Start expanded** in *Format → Layout* to open every group expanded instead of collapsed.
 
 ### 3.3 Detail panel
 
@@ -145,9 +147,33 @@ shows just that barrier's actions.
 Scroll to zoom, drag empty canvas to pan, use the + / – / ⤢ controls at bottom-left. Clicking
 a node zooms to it and highlights its path; clicking empty canvas fits everything back.
 
+### 3.8 Barrier View: picking a barrier (premium)
+
+Set *Visual perspective = Barrier View*. With no barrier chosen you get a summary: every unique
+barrier, each showing how many risks it spans.
+
+| Action | Result |
+|---|---|
+| Click a barrier in the summary | That barrier moves to the centre, with the causes / consequences it sits on and the risks it protects |
+| **← All Barriers** button | Back to the summary |
+| Filter to one barrier (slicer or drill-through) | That barrier is centred straight away |
+
+Cause and consequence cards here are labelled **Risk: <name>**, so a barrier shared by several
+risks shows which risk each side item comes from. The Barrier View always reads across every risk
+in the data, even when the Risk Bowtie is showing just one.
+
 ---
 
 ## 4. The data model, explained
+
+### 4.0 Several risks in one dataset
+
+If your `BowtieCombined` holds more than one risk, the Risk Bowtie shows the first and a small
+badge says "Showing 1 of N risks". To switch, add a slicer or table on `RiskID` and select a row —
+Power BI filters the visual's data and the bowtie re-renders for that risk. This is the normal way
+to browse a multi-risk register.
+
+The Barrier View is unaffected: it deliberately reads across all risks.
 
 ### 4.1 Which risk does a barrier belong to?
 
@@ -199,9 +225,10 @@ don't bind the well, the badge uses **Format → Colours → Risk score default 
 
 **Layout**
 - *Visual perspective* — Risk Bowtie / Barrier View
-- *Barrier layout* — Grouped (two-column) · Vertical (stacked) · Auto layout (premium)
+- *Barrier layout* — Grouped (two-column) · Vertical (stacked, premium) · Auto layout (premium: barriers connected in sequence along each path) · Auto layout, grouped barriers (premium: expanded barriers boxed in two columns — more compact with many barriers)
+- *Start expanded* — open barrier groups expanded instead of collapsed
 - *Show zoom controls*, *Animate degraded edges*
-- *Toolbar position* + button background / text / border colours
+- *Show expand/collapse toolbar* — then *Toolbar position* + button background / text / border colours
 
 **Colours** — risk, cause, consequence, barrier fill and border, connectors, info panel
 background / text / border, risk score default. Text on every card auto-contrasts against whatever
@@ -222,7 +249,7 @@ Right-click any node to get Power BI's drill-through menu. To make it useful:
 1. Add a new report page. In its Format pane → **Page information → Drill through**, add `BarrierID` as the drill-through field.
 2. On that page, add a second Bowtie visual with *Visual perspective = Barrier View*, bound to the same wells.
 3. Add whatever else helps a barrier owner — an actions table, KPI cards.
-4. Back on the main page, right-click a barrier → **Drill through → Barrier detail**. The target page opens filtered to that barrier, and the Barrier View renders it in the centre.
+4. Back on the main page, right-click a barrier → **Drill through → Barrier detail**. The target page opens filtered to that barrier, and the Barrier View centres it. You can also reach any barrier by clicking it in the Barrier View summary (§3.8).
 
 **Risk detail page** — same pattern with `RiskID` as the drill-through field.
 
@@ -235,13 +262,14 @@ a risk will also list the barrier page. Name your pages clearly and users will p
 
 | | Free | Premium |
 |---|---|---|
-| Risk Bowtie — Grouped & Vertical layouts | ✓ | ✓ |
+| Risk Bowtie — Grouped layout | ✓ | ✓ |
 | Expand / collapse, health dots, action & overdue pills | ✓ | ✓ |
 | Hover tooltips | ✓ | ✓ |
-| Auto layout (engine-positioned, pan & zoom) | | ✓ |
+| Vertical layout | | ✓ |
+| Auto layout — connected or grouped barriers (engine-positioned, pan & zoom) | | ✓ |
 | Detail panel with actions and hyperlinks | | ✓ |
 | Cross-filtering and drill-through | | ✓ |
-| Barrier View | | ✓ |
+| Barrier View (summary, click-through to any barrier) | | ✓ |
 | Path highlighting, edge animation | | ✓ |
 | Colour, font and toolbar customisation | | ✓ |
 | Watermark & upgrade banner | shown | removed |
@@ -253,6 +281,10 @@ Licensing is handled by Microsoft AppSource. A free trial of premium is availabl
 ## 9. Troubleshooting
 
 **"Resize to view bowtie"** — the visual is under 300×200 px. Make it bigger.
+
+**Selecting a risk in a table/slicer doesn't change the bowtie** — make sure the table and the
+bowtie are on the same page and both read from `BowtieCombined`. Cross-visual filtering only
+works between visuals sharing a data source.
 
 **Barriers are missing** — you're probably binding columns from separate tables. Use the
 combine query (§2.1) so every barrier has a row regardless of actions.
