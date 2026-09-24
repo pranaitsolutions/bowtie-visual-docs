@@ -272,15 +272,27 @@ a risk will also list the barrier page. Name your pages clearly and users will p
 | Barrier View (summary, click-through to any barrier) | | ✓ |
 | Path highlighting, edge animation | | ✓ |
 | Colour, font and toolbar customisation | | ✓ |
-| Watermark & upgrade banner | shown | removed |
 
 Licensing is handled by Microsoft AppSource. A free trial of premium is available.
+
+**Without a licence** every bowtie shows the free Grouped layout, whatever layout or perspective
+is set in the Format pane. The settings are kept, so the same report shows the premium views to
+licensed users. While you edit a report, Power BI adds a licence icon to the visual (reading
+mode doesn't show it), and briefly shows a banner when a visual is set to a premium feature.
+
+The free view is also what appears where Power BI can't check licences: Publish to Web,
+embedded reports, Power BI Report Server, and PDF/PowerPoint export via the REST API.
 
 ---
 
 ## 9. Troubleshooting
 
 **"Resize to view bowtie"** — the visual is under 300×200 px. Make it bigger.
+
+**I have a licence but still see the Grouped layout** — a newly assigned licence can take up to an
+hour to be recognised. Then refresh: press F5 in the Power BI Service, or close and reopen Power BI
+Desktop. In Desktop, make sure you're signed in with the account the licence is assigned to;
+signed out or offline, Desktop can't check the licence and shows the free view.
 
 **Selecting a risk in a table/slicer doesn't change the bowtie** — make sure the table and the
 bowtie are on the same page and both read from `BowtieCombined`. Cross-visual filtering only
@@ -308,4 +320,4 @@ then Delete. Or right-click → Remove. This is standard Power BI behaviour for 
 
 ## 10. Support
 
-support@pranaits.com · https://pranaits.github.io/bowtie-visual-docs/
+support@pranaits.com · https://pranaitsolutions.github.io/bowtie-visual-docs/
