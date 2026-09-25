@@ -109,7 +109,7 @@ The bowtie renders as soon as the required wells are bound.
 | Action | Result |
 |---|---|
 | Click ⊞ on a barrier group card | Expands that cause's / consequence's barriers into individual cards |
-| Click ⊟ on the expanded barrier box (Grouped, Auto layout grouped barriers) | Collapses them back (⊟ only appears while expanded) |
+| Click ⊟ on the expanded barrier box (Grouped, Vertical, Auto layout grouped barriers) | Collapses them back (⊟ only appears while expanded) |
 | Click ⊟ on the cause / consequence card (Auto layout) | Collapses the barrier chain back; the chain has no box, so the control sits on the card |
 | **Expand All** / **Collapse All** toolbar | All groups at once (Auto layout; hide it with *Show expand/collapse toolbar*) |
 
@@ -226,7 +226,7 @@ don't bind the well, the badge uses **Format → Colours → Risk score default 
 
 **Layout**
 - *Visual perspective* — Risk Bowtie / Barrier View
-- *Barrier layout* — Grouped (two-column) · Vertical (stacked, premium) · Auto layout (premium: barriers connected in sequence along each path) · Auto layout, grouped barriers (premium: expanded barriers boxed in two columns — more compact with many barriers)
+- *Barrier layout* — Grouped (two-column) · Vertical (premium: expanded barriers stacked in one column) · Auto layout (premium: barriers connected in sequence along each path) · Auto layout, grouped barriers (premium: expanded barriers boxed in two columns — more compact with many barriers)
 - *Start expanded* — open barrier groups expanded instead of collapsed
 - *Show zoom controls*, *Animate degraded edges*
 - *Show expand/collapse toolbar* — then *Toolbar position* + button background / text / border colours
@@ -289,6 +289,10 @@ embedded reports, Power BI Report Server, and PDF/PowerPoint export via the REST
 ## 9. Troubleshooting
 
 **"Resize to view bowtie"** — the visual is under 300×200 px. Make it bigger.
+
+**Text looks small in the Grouped or Vertical layout** — when the bowtie doesn't fit the visual, it is
+scaled down so all of it stays visible. Make the visual bigger, collapse some barrier groups, or use an
+Auto layout, which has zoom and pan (premium).
 
 **I have a licence but still see the Grouped layout** — a newly assigned licence can take up to an
 hour to be recognised. Then refresh: press F5 in the Power BI Service, or close and reopen Power BI
