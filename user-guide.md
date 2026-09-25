@@ -109,7 +109,8 @@ The bowtie renders as soon as the required wells are bound.
 | Action | Result |
 |---|---|
 | Click ⊞ on a barrier group card | Expands that cause's / consequence's barriers into individual cards |
-| Click ⊟ on the cause / consequence card | Collapses them back (⊟ only appears while expanded) |
+| Click ⊟ on the expanded barrier box (Grouped, Auto layout grouped barriers) | Collapses them back (⊟ only appears while expanded) |
+| Click ⊟ on the cause / consequence card (Auto layout) | Collapses the barrier chain back; the chain has no box, so the control sits on the card |
 | **Expand All** / **Collapse All** toolbar | All groups at once (Auto layout; hide it with *Show expand/collapse toolbar*) |
 
 Turn on **Start expanded** in *Format → Layout* to open every group expanded instead of collapsed.
