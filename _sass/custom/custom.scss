@@ -45,19 +45,31 @@
 }
 
 // ── Header: "Get it on AppSource" as a teal button ────────────────────
-.aux-nav .aux-nav-list-item a {
-  align-self: center;
-  margin: 0.5rem 0;
-  padding: 0.35rem 0.9rem;
-  border-radius: 4px;
-  background: $prana-teal-dark;
-  color: #fff;
-  font-weight: 600;
-  line-height: 1.4;
+// The theme makes the link a full-height .site-button; size it to its text instead and centre
+// it, so it never grows past the header (the header scrolls when its content overflows).
+.aux-nav {
+  overflow: hidden;
 
-  &:hover {
-    background: $prana-navy;
+  .aux-nav-list-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .aux-nav-list-item a.site-button {
+    height: auto;
+    margin: 0;
+    padding: 0.35rem 0.9rem;
+    border-radius: 4px;
+    background: $prana-teal-dark;
     color: #fff;
+    font-weight: 600;
+    line-height: 1.4;
+
+    &:hover {
+      background: $prana-navy;
+      background-image: none;
+      color: #fff;
+    }
   }
 }
 
