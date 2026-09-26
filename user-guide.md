@@ -1,6 +1,6 @@
 # Bowtie Risk Visual for Power BI — Help
 
-**Version 1.3.0 · Prana IT Solutions Ltd · support@pranaits.com**
+**Version 1.3.1 · Prana IT Solutions Ltd · support@pranaits.com**
 
 ---
 
@@ -60,7 +60,8 @@ get their own rows.
 
 ### 2.2 Add the visual
 
-1. Visualizations pane → **…** → **Import a visual from a file** → select the `.pbiviz`
+1. Visualizations pane → **…** → **Get more visuals** → search for **Bowtie Risk Visual** → **Add**
+   (or, if you were given a `.pbiviz` file: **…** → **Import a visual from a file**)
 2. Drag the bowtie icon onto the canvas
 3. Resize to at least 900×500 px — it will say "Resize to view bowtie" until it has room
 
@@ -100,7 +101,7 @@ The bowtie renders as soon as the required wells are bound.
 - **Blue cards (left)** — causes. Subtitle shows likelihood if bound.
 - **White cards next to them** — prevention barrier groups. Collapsed by default (see *Start expanded*): "N barriers", a row of health dots (green / amber / red), an action pill, and ⊞.
 - **Orange-bordered card (centre)** — the top event. Shows the risk score badge and a pill with total risk-level actions.
-- **Grey cards (right)** — mitigation barrier groups.
+- **Group cards on the right** — mitigation barrier groups, the same as on the left.
 - **Yellow cards (far right)** — consequences. Subtitle shows severity if bound.
 - **Connectors** fan from the risk to each side. In the premium view they turn red or amber when the barrier they pass is failed or degraded.
 
@@ -111,11 +112,11 @@ The bowtie renders as soon as the required wells are bound.
 | Click ⊞ on a barrier group card | Expands that cause's / consequence's barriers into individual cards |
 | Click ⊟ on the expanded barrier box (Grouped, Vertical, Auto layout grouped barriers) | Collapses them back (⊟ only appears while expanded) |
 | Click ⊟ on the cause / consequence card (Auto layout) | Collapses the barrier chain back; the chain has no box, so the control sits on the card |
-| **Expand All** / **Collapse All** toolbar | All groups at once (Auto layout; hide it with *Show expand/collapse toolbar*) |
+| **Expand All** / **Collapse All** toolbar (premium) | All groups at once, in every Risk Bowtie layout (hide it with *Show expand/collapse toolbar*) |
 
 Turn on **Start expanded** in *Format → Layout* to open every group expanded instead of collapsed.
 
-### 3.3 Detail panel
+### 3.3 Detail panel (premium)
 
 Click any barrier, risk, cause or consequence. A panel opens on the right showing every field
 you bound to that entity's Details well, plus:
@@ -123,9 +124,13 @@ you bound to that entity's Details well, plus:
 - For barriers: which risk it belongs to, and each linked action with status, due date, assignee
 - For the risk: its risk-level actions
 
+Dates and numbers appear in the format set for that field in your model (for example `yyyy-MM-dd`
+or a percentage), in the viewer's language. A date field with no format shows as the short date for
+the viewer's locale.
+
 Click the same node again, click empty canvas, or press × to close.
 
-### 3.4 Hyperlinks to your source system
+### 3.4 Hyperlinks to your source system (premium)
 
 If any column in an entity's Details well contains a value starting with `https://`, the title
 in the detail panel becomes a link. Clicking it opens that URL in the browser. Use this to jump
@@ -145,8 +150,13 @@ shows just that barrier's actions.
 
 ### 3.7 Zoom and pan (premium)
 
-Scroll to zoom, drag empty canvas to pan, use the + / – / ⤢ controls at bottom-left. Clicking
-a node zooms to it and highlights its path; clicking empty canvas fits everything back.
+In every layout: scroll to pan, **Ctrl + scroll** (or pinch) to zoom, drag to pan, or use the
++ / – / ⤢ controls at bottom-left (hide them with *Show zoom controls*). ⤢ fits the whole bowtie
+back into view.
+
+In the Auto layouts and Barrier View, clicking a node also zooms to it and highlights its path, and
+clicking empty canvas fits everything back. In Grouped and Vertical the view stays where you put it;
+expanding or collapsing a group fits the bowtie again.
 
 ### 3.8 Barrier View: picking a barrier (premium)
 
@@ -169,10 +179,11 @@ in the data, even when the Risk Bowtie is showing just one.
 
 ### 4.0 Several risks in one dataset
 
-If your `BowtieCombined` holds more than one risk, the Risk Bowtie shows the first and a small
-badge says "Showing 1 of N risks". To switch, add a slicer or table on `RiskID` and select a row —
-Power BI filters the visual's data and the bowtie re-renders for that risk. This is the normal way
-to browse a multi-risk register.
+If your `BowtieCombined` holds more than one risk, the Risk Bowtie shows the first, and a small note
+in the bottom-right corner says "1 of N risks shown · select a risk or use a slicer to change". To
+switch, select a risk in a table on the same page, add a slicer or filter on `RiskID`, or drill
+through to the page. Power BI filters the visual's data and the bowtie re-renders for that risk.
+This is the normal way to browse a multi-risk register.
 
 The Barrier View is unaffected: it deliberately reads across all risks.
 
@@ -228,8 +239,11 @@ don't bind the well, the badge uses **Format → Colours → Risk score default 
 - *Visual perspective* — Risk Bowtie / Barrier View
 - *Barrier layout* — Grouped (two-column) · Vertical (premium: expanded barriers stacked in one column) · Auto layout (premium: barriers connected in sequence along each path) · Auto layout, grouped barriers (premium: expanded barriers boxed in two columns — more compact with many barriers)
 - *Start expanded* — open barrier groups expanded instead of collapsed
-- *Show zoom controls*, *Animate degraded edges*
-- *Show expand/collapse toolbar* — then *Toolbar position* + button background / text / border colours
+- *Show zoom controls* — the + / – / ⤢ buttons (premium, every layout)
+- *Animate degraded edges* — Auto layouts and Barrier View
+- *Show expand/collapse toolbar* — then *Toolbar position* + button background / text / border colours (premium, every Risk Bowtie layout)
+
+Settings that have no effect in the chosen layout or perspective are hidden.
 
 **Colours** — risk, cause, consequence, barrier fill and border, connectors, info panel
 background / text / border, risk score default. Text on every card auto-contrasts against whatever
@@ -267,7 +281,8 @@ a risk will also list the barrier page. Name your pages clearly and users will p
 | Expand / collapse, health dots, action & overdue pills | ✓ | ✓ |
 | Hover tooltips | ✓ | ✓ |
 | Vertical layout | | ✓ |
-| Auto layout — connected or grouped barriers (engine-positioned, pan & zoom) | | ✓ |
+| Auto layout — connected or grouped barriers (engine-positioned) | | ✓ |
+| Zoom and pan, Expand All / Collapse All toolbar (every premium layout) | | ✓ |
 | Detail panel with actions and hyperlinks | | ✓ |
 | Cross-filtering and drill-through | | ✓ |
 | Barrier View (summary, click-through to any barrier) | | ✓ |
@@ -291,8 +306,8 @@ embedded reports, Power BI Report Server, and PDF/PowerPoint export via the REST
 **"Resize to view bowtie"** — the visual is under 300×200 px. Make it bigger.
 
 **Text looks small in the Grouped or Vertical layout** — when the bowtie doesn't fit the visual, it is
-scaled down so all of it stays visible. Make the visual bigger, collapse some barrier groups, or use an
-Auto layout, which has zoom and pan (premium).
+scaled down so all of it stays visible. Make the visual bigger or collapse some barrier groups. With
+premium you can also zoom in: Ctrl + scroll, or the + button.
 
 **I have a licence but still see the Grouped layout** — a newly assigned licence can take up to an
 hour to be recognised. Then refresh: press F5 in the Power BI Service, or close and reopen Power BI
