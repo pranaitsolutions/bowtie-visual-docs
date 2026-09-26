@@ -47,7 +47,7 @@ Both views read the same table, so you build your data once.
 
 ## New in 1.3.1
 
-- **Licensing** — Premium features are unlocked by a licence from Microsoft AppSource, with a one-month free trial. See [Free and Premium](free-and-premium).
+- **Licensing** — Premium features are unlocked by a licence from Microsoft AppSource, with a one-month free trial on the 1–10 user plan. See [Free and Premium](free-and-premium).
 - **Zoom, pan and the Expand All / Collapse All toolbar** in every Premium layout, not just the Auto layouts.
 - **Your colours and fonts** from the Format pane now apply to the Grouped and Vertical layouts too.
 - **Dates and numbers** in the detail panel follow the format set on each field in your model.
