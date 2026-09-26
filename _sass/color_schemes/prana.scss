@@ -1,0 +1,20 @@
+// Prana IT Solutions brand: navy #163E64, with the teal (#009696) used in the listing screenshots.
+// Loaded after Just the Docs' light scheme, so only what differs is set here.
+
+$prana-navy: #163e64;
+$prana-teal: #009696;
+$prana-teal-dark: #007a7a;   // teal for text and small labels on white (about 5:1 contrast)
+$prana-mist: #f3f6fa;        // the pale blue-grey behind the listing screenshots
+
+$body-heading-color: $prana-navy;
+$link-color: $prana-teal-dark;
+$sidebar-color: $prana-navy;
+$btn-primary-color: $prana-navy;
+$feedback-color: $prana-mist;
+$code-background-color: $prana-mist;
+
+// Callouts take their colours from named palettes: "note" uses blue, "tip" uses green
+$blue-000: #d6e1ec;
+$blue-300: $prana-navy;
+$green-000: #cce7e7;
+$green-300: $prana-teal-dark;

@@ -27,7 +27,7 @@ perspective are hidden, so you only see what applies.
 {: .d-inline-block }
 
 Premium
-{: .label .label-purple }
+{: .label .label-premium }
 
 Risk, cause, consequence, barrier fill and border, connectors, detail-panel background / text /
 border, and the risk score default colour. Text on every card switches between white and dark to
@@ -40,7 +40,7 @@ mode every layout uses the system colours.
 {: .d-inline-block }
 
 Premium
-{: .label .label-purple }
+{: .label .label-premium }
 
 **Risk Text**, **Cause Text**, **Consequence Text**, **Barrier Text** — font size and family for
 each kind of card.

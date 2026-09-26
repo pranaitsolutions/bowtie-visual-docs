@@ -59,7 +59,7 @@ is larger than the visual, Grouped and Vertical scale it down so all of it stays
 {: .d-inline-block }
 
 Premium
-{: .label .label-purple }
+{: .label .label-premium }
 
 ![The detail panel for a barrier, with its fields and actions](assets/images/5-node-details.png)
 
@@ -83,7 +83,7 @@ Click the same node again, click empty canvas, or press **×** to close the pane
 {: .d-inline-block }
 
 Premium
-{: .label .label-purple }
+{: .label .label-premium }
 
 In every Premium layout:
 
@@ -99,7 +99,7 @@ put it; expanding or collapsing a group fits the bowtie again.
 {: .d-inline-block }
 
 Premium
-{: .label .label-purple }
+{: .label .label-premium }
 
 Clicking a node selects the rows behind it, so every other visual on the page filters to them.
 Put a table of actions next to the bowtie, click a barrier, and the table shows just that
@@ -109,7 +109,7 @@ barrier's actions.
 {: .d-inline-block }
 
 Premium
-{: .label .label-purple }
+{: .label .label-premium }
 
 ![Barrier View: one barrier at the centre, with the risks it protects and their consequences](assets/images/4-barrier-view.png)
 
@@ -128,7 +128,7 @@ shows which risk each side comes from. Barrier View always reads across every ri
 {: .d-inline-block }
 
 Premium
-{: .label .label-purple }
+{: .label .label-premium }
 
 Right-click any node to get Power BI's drill-through menu. To set up a barrier page:
 

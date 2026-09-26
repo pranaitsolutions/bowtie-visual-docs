@@ -5,6 +5,8 @@ description: Bow-tie risk diagrams from your risk register, inside Power BI.
 permalink: /
 ---
 
+<div class="hero" markdown="1">
+
 # Bowtie Risk Visual for Power BI
 {: .fs-9 }
 
@@ -12,11 +14,11 @@ Draw bow-tie risk diagrams straight from the risk register you already have in P
 No separate tool, no re-keying, no drawing by hand.
 {: .fs-6 .fw-300 }
 
-[Get it on AppSource](https://marketplace.microsoft.com/en-us/product/power-bi-visuals/prana-it-solutions.bowtie-risk-visual?tab=Overview){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Set up in 5 minutes](get-started){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Downloads](downloads){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get it on AppSource](https://marketplace.microsoft.com/en-us/product/power-bi-visuals/prana-it-solutions.bowtie-risk-visual?tab=Overview){: .btn .btn-appsource .fs-5 }
+[Set up in 5 minutes](get-started){: .btn .fs-5 }
+[Downloads](downloads){: .btn .fs-5 }
 
----
+</div>
 
 ![A risk bowtie: causes on the left, barriers, the top event, barriers, consequences on the right](assets/images/1-risk-bowtie.png)
 

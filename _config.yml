@@ -5,7 +5,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
 
-color_scheme: light
+color_scheme: prana
 search_enabled: true
 heading_anchors: true
 back_to_top: true
