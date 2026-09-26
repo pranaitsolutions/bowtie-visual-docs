@@ -33,7 +33,7 @@ several). The visual calls this **BowtieCombined**. You have two ways to get the
 Skip to §2.2.
 
 **Path B — you have five normalised tables (Risk, Cause, Consequence, Barrier, Action).**
-This is the common case. Use the included `BowtieVisual_CombineQuery.pq`:
+This is the common case. Download [`BowtieVisual_CombineQuery.pq`](https://pranaitsolutions.github.io/bowtie-visual-docs/sampledata/BowtieVisual_CombineQuery.pq), then:
 
 1. Power BI Desktop → **Home → Transform data**
 2. **Home → New Source → Blank Query**
@@ -51,9 +51,13 @@ What you'll have to change in the CUSTOMISE block, and only there:
 | `K_BarrierLinkedTo` | Column on Barrier holding the CauseID or ConsequenceID it protects | `LinkedTo` |
 | `K_ActionLinkedTo` | Column on Action holding the BarrierID (or RiskID for risk-level actions) | `LinkedTo` |
 
-The query LEFT-joins everything onto the Barrier table so nothing is dropped: barriers with no
-actions still appear, causes with no barriers still appear, and actions linked directly to a risk
-get their own rows.
+The query LEFT-joins everything onto the Barrier table: barriers with no actions still appear, and
+actions linked directly to a risk get their own rows. Causes and consequences come in through their
+barriers, so a cause or consequence with no barrier yet won't appear until one is linked to it.
+
+To see the expected shape first, the [sample risk register](https://pranaitsolutions.github.io/bowtie-visual-docs/sampledata/BowtieVisual_SampleData_MultiRisk.xlsx) (Excel) has the five
+source tables, named as the query's defaults expect, plus the finished `BowtieCombined` table and a
+`RiskMatrix` sheet (see §5).
 
 > **Why one flat table?** If you drag columns from five separate tables into the visual, Power BI
 > silently inner-joins them and any barrier without an action disappears. The flat table avoids that.

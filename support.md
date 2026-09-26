@@ -6,8 +6,9 @@ pane. Most questions are answered in §2 (setup) and §9 (troubleshooting).
 
 ## Quick answers
 
-**Barriers are missing** → you're binding from separate tables. Use the included Power Query
-script to build one flat `BowtieCombined` table. See Help §2.1.
+**Barriers are missing** → you're binding from separate tables. Use the Power Query script
+[`BowtieVisual_CombineQuery.pq`](sampledata/BowtieVisual_CombineQuery.pq) to build one flat
+`BowtieCombined` table. See Help §2.1.
 
 **Action counts show nothing** → `ActionID` must sit on the same row as its barrier. If your table
 is fully denormalised, bind *Action: Linked To*. Help §4.3.
