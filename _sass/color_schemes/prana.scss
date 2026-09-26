@@ -1,10 +1,7 @@
 // Prana IT Solutions brand: navy #163E64, with the teal (#009696) used in the listing screenshots.
 // Loaded after Just the Docs' light scheme, so only what differs is set here.
 
-$prana-navy: #163e64;
-$prana-teal: #009696;
-$prana-teal-dark: #007a7a;   // teal for text and small labels on white (about 5:1 contrast)
-$prana-mist: #f3f6fa;        // the pale blue-grey behind the listing screenshots
+// The brand colours themselves are defined in _sass/custom/setup.scss
 
 $body-heading-color: $prana-navy;
 $link-color: $prana-teal-dark;

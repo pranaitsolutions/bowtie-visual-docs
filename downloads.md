@@ -1,7 +1,7 @@
 ---
 title: Downloads
 nav_order: 8
-description: Sample report, sample risk register and the Power Query script.
+description: "Sample report, sample risk register and the Power Query script."
 ---
 
 # Downloads

@@ -1,7 +1,7 @@
 ---
 title: User guide
 nav_exclude: true
-description: The user guide is now split into sections.
+description: "The user guide is now split into sections."
 ---
 
 # User guide

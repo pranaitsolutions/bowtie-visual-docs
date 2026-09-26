@@ -1,7 +1,7 @@
 ---
 title: Support
 nav_order: 7
-description: Fixes for common problems, and how to contact Prana IT Solutions.
+description: "Fixes for common problems, and how to contact Prana IT Solutions."
 ---
 
 # Support

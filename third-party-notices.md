@@ -1,7 +1,7 @@
 ---
 title: Third-party notices
 nav_order: 10
-description: Open-source components in the visual and their licences.
+description: "Open-source components in the visual and their licences."
 ---
 
 # Third-Party Notices

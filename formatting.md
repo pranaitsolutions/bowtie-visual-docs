@@ -1,7 +1,7 @@
 ---
 title: Formatting
 nav_order: 5
-description: Every Format-pane setting and the layouts it applies to.
+description: "Every Format-pane setting and the layouts it applies to."
 ---
 
 # Formatting

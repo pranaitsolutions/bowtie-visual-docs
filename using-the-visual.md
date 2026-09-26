@@ -1,7 +1,7 @@
 ---
 title: Using the visual
 nav_order: 3
-description: Reading the bowtie, the four layouts, expanding groups, the detail panel, zoom, cross-filtering, Barrier View and drill-through.
+description: "Reading the bowtie, the four layouts, expanding groups, the detail panel, zoom, cross-filtering, Barrier View and drill-through."
 ---
 
 # Using the visual

@@ -1,7 +1,7 @@
 ---
 title: Free and Premium
 nav_order: 6
-description: What the free version includes, what Premium adds, how licences work and what unlicensed users see.
+description: "What the free version includes, what Premium adds, how licences work and what unlicensed users see."
 ---
 
 # Free and Premium

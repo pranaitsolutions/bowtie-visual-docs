@@ -1,7 +1,7 @@
 ---
 title: Home
 nav_order: 1
-description: Bow-tie risk diagrams from your risk register, inside Power BI.
+description: "Bow-tie risk diagrams from your risk register, inside Power BI."
 permalink: /
 ---
 

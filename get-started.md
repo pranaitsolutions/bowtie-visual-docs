@@ -1,7 +1,7 @@
 ---
 title: Get started
 nav_order: 2
-description: Install the visual, build one flat table from your risk register, bind the fields.
+description: "Install the visual, build one flat table from your risk register, bind the fields."
 ---
 
 # Get started

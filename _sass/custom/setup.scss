@@ -1,0 +1,7 @@
+// Prana IT Solutions brand colours. Defined here because every Just the Docs stylesheet
+// (including the dark one it always builds) imports setup first; the colour scheme and
+// custom.scss both use them.
+$prana-navy: #163e64;
+$prana-teal: #009696;
+$prana-teal-dark: #007a7a;   // teal for text and small labels on white (about 5:1 contrast)
+$prana-mist: #f3f6fa;        // the pale blue-grey behind the listing screenshots
