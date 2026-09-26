@@ -39,9 +39,8 @@ Licences are sold and managed through Microsoft: buy from the
 then assign them to people in the [Microsoft 365 admin center](https://admin.microsoft.com/).
 The buyer gets a licence automatically.
 
-Licences come in two plans: **1–10 users** and **10–100 users**. The 1–10 plan has a **one-month
-free trial**, enough for a team to evaluate Premium before buying. For more than 100 users, ask us
-about volume pricing through a private plan.
+Licences come in two plans, **1–10 users** and **10–100 users**, and both have a **one-month free
+trial**. For more than 100 users, ask us about volume pricing through a private plan.
 
 A newly assigned licence can take up to an hour to be recognised. Then press **F5** in the Power BI
 Service, or close and reopen Power BI Desktop.
