@@ -1,3 +1,9 @@
+---
+title: Third-party notices
+nav_order: 10
+description: Open-source components in the visual and their licences.
+---
+
 # Third-Party Notices
 
 Bowtie Risk Visual for Power BI (Prana IT Solutions Ltd) includes the open-source software listed below.

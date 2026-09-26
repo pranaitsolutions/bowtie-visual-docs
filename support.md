@@ -1,36 +1,92 @@
-# Support — Bowtie Risk Visual for Power BI
+---
+title: Support
+nav_order: 7
+description: Fixes for common problems, and how to contact Prana IT Solutions.
+---
 
-## Start here
-The [User Help](user-guide) covers setup, the data model, every interaction and the formatting
-pane. Most questions are answered in §2 (setup) and §9 (troubleshooting).
+# Support
+{: .no_toc }
 
-## Quick answers
+Most questions are answered below. If yours isn't, email **support@pranaits.com**.
+{: .fs-6 .fw-300 }
 
-**Barriers are missing** → you're binding from separate tables. Use the Power Query script
-[`BowtieVisual_CombineQuery.pq`](sampledata/BowtieVisual_CombineQuery.pq) to build one flat
-`BowtieCombined` table. See Help §2.1.
+<details open markdown="block">
+  <summary>On this page</summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
-**Action counts show nothing** → `ActionID` must sit on the same row as its barrier. If your table
-is fully denormalised, bind *Action: Linked To*. Help §4.3.
+---
 
-**"Resize to view bowtie"** → make the visual larger than 300×200 px.
+## The visual shows "Resize to view bowtie"
 
-**Score badge is the wrong colour** → bind a hex colour column to *Risk: Score Colour*. Help §5.
+The visual is smaller than 300 × 200 px. Make it bigger; 900 × 500 px or more works best.
 
-**How do I drill from a barrier to a detail page?** → Help §7.
+## Barriers are missing
 
-**Can I link nodes to my risk platform?** → yes; put a URL column in the Details well. Help §3.4.
+You're probably binding columns from separate tables, and Power BI drops barriers that have no
+actions. Build one flat table with the
+[Power Query script](sampledata/BowtieVisual_CombineQuery.pq) — see [Get started](get-started#2-build-one-flat-table).
 
-## Report a problem
+## A cause or consequence is missing
+
+With the Power Query script, causes and consequences come in through their barriers, so one with
+no barrier linked to it yet doesn't appear. Link a barrier to it.
+
+## I have a licence but still see the Grouped layout
+
+A newly assigned licence can take up to an hour to be recognised. Then press **F5** in the Power BI
+Service, or close and reopen Power BI Desktop. In Desktop, sign in with the account the licence is
+assigned to — signed out or offline, Desktop can't check the licence and shows the free view.
+See [Free and Premium](free-and-premium).
+
+## It shows the wrong risk, or "1 of N risks shown"
+
+A bowtie shows one risk at a time. Select a risk in another visual, or add a slicer or filter on
+`RiskID`. See [several risks in one table](your-data#several-risks-in-one-table).
+
+## Selecting a risk in a table or slicer doesn't change the bowtie
+
+The table or slicer and the bowtie must be on the same page and read from the same
+`BowtieCombined` table.
+
+## Action counts show nothing
+
+`ActionID` must be on the same row as its barrier. If your table is fully denormalised, bind
+*Action: Linked To*. See [how actions attach](your-data#how-actions-attach-to-barriers).
+
+## Overdue counts look wrong
+
+Put the status and due-date columns in *Action: Details*, and make sure the due date is a date
+column, not text. See [overdue actions](your-data#overdue-actions).
+
+## The score badge is orange
+
+No colour is bound. Bind *Risk: Score Colour*, or change **Format** → **Colours** → **Risk score
+default colour**. See [risk score colours](your-data#risk-score-colours).
+
+## Text looks small in the Grouped or Vertical layout
+
+When the bowtie is larger than the visual, it's scaled down so all of it stays visible. Make the
+visual bigger or collapse some barrier groups. With Premium you can also zoom in: **Ctrl + scroll**
+or the **+** button.
+
+## The detail panel shows fields I don't want
+
+It shows only what's in the Details wells. Remove a column from the well to hide it.
+
+## The visual won't delete with the Delete key
+
+Click outside it, then click its border, then press **Delete** — or right-click → **Remove**.
+That's standard Power BI behaviour for custom visuals.
+
+## Contact us
+
 Email **support@pranaits.com** with:
-- Power BI Desktop version
-- Visual version (Format pane → About)
-- What you expected, what happened, and a screenshot
-- A sanitised sample of the rows involved if possible
 
-## Feature requests
-Same address, "Feature request" in the subject.
+- your Power BI Desktop version and the visual's version;
+- what you expected and what happened, with a screenshot;
+- if you can, a sanitised sample of the rows involved.
 
-## Open-source components
-The visual is built with open-source libraries including React, React Flow, dagre and d3.
-Copyright and licence texts: [Third-party notices](third-party-notices).
+For a feature request, use the same address with "Feature request" in the subject.

@@ -1,3 +1,9 @@
+---
+title: Privacy
+nav_order: 9
+description: What the visual does with your data: it stays inside Power BI.
+---
+
 # Privacy Policy — Bowtie Risk Visual for Power BI
 
 **Effective:** September 2026 · **Publisher:** Prana IT Solutions Ltd
